@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" 
+    href="https://media.istockphoto.com/photos/heap-of-money-with-magnifying-glass-picture-id501291705?s=612x612">
+
     <title>Bank Note Authentication</title>
 </head>
 <body style="background-color: #a0fce0;">
@@ -14,7 +18,7 @@
     </header>
 
     <div class="container">
-        <form action="POST">
+        <form method="POST" action="{{ url_for('predict') }}">
             <fieldset class="form-group">
                 <div class="form-group m-3">
                     <label for="variance" class="form-label"><h5>ENTER VARIANCE</h5></label>
@@ -42,7 +46,12 @@
             </fieldset>
     </div>
 
-
+    <h3 class="text-center"> {{ prediction_text }} </h3>
+    {% if request.method == "POST" %}
+        <div class="form-group mt-4 text-center">
+            <a class="btn btn-outline-secondary btn-sm" href="/">Clear Text</a>
+        </div>
+    {% endif %}
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
