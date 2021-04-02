@@ -16,4 +16,5 @@ Here is a web application to predict whether a abnk note is authentic or fake.
 ## Screenshots
 ![Screenshot](screenshots/1.png)
 <hr>
+
 ![Screenshot](screenshots/2.png)
